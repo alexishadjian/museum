@@ -1,0 +1,216 @@
+/*--------------------------------------------------------------
+Font face
+--------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../assets/fonts/Montserrat-Regular.woff2') format('woff2'), url('../assets/fonts/Montserrat-Regular.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/fonts/Montserrat-SemiBold.woff2') format('woff2'), url('../assets/fonts/Montserrat-SemiBold.ttf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2'), url('../assets/fonts/Montserrat-Bold.ttf') format('opentype');
+}
+
+
+/*--------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    max-width: 1375px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.h2 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.h3 {
+    font-size: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    margin: 80px 0;
+}
+
+.color-white {
+    color: white;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.textAlign-center {
+    text-align: center;
+}
+
+.fontWeight-SB {
+    font-weight: 600;
+}
+
+.gap {
+    gap: 50px;
+}
+
+
+/*--------------------------------------------------------------
+Colonnes
+--------------------------------------------------------------*/
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col1 {
+    flex: 0 1 calc(100% / 6);
+    max-width: calc(100% / 6);
+}
+
+.col2 {
+    flex: 0 1 calc(100% / 6 * 2);
+    max-width: calc(100% / 6 * 2);
+}
+
+.col3 {
+    flex: 0 1 calc(100% / 6 * 3);
+    max-width: calc(100% / 6 * 3);
+}
+
+.col4 {
+    flex: 0 1 calc(100% / 6 * 4);
+    max-width: calc(100% / 6 * 4);
+}
+
+.col5 {
+    flex: 0 1 calc(100% / 6 * 5);
+    max-width: calc(100% / 6 * 5);
+}
+
+.col6 {
+    flex: 0 1 100%;
+    max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+Modèles
+--------------------------------------------------------------*/
+
+/*-----Bouton-----*/
+
+.btn {
+    background: none;
+    padding: 10px 25px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn_primary {
+    background-color: #212121;
+    color: white;
+    font-weight: 600;
+}
+
+.btn_primary:hover {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -2px);
+}
+
+.btn_secondary {
+    background-color: transparent;
+    border: 2px solid black;
+    font-weight: 600;
+    color: black;
+    position: relative;
+}
+
+.btn_secondary:before {
+    content: "";
+    position: absolute;
+    background-color: #212121;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: .2s;
+    z-index: -1;
+}
+
+.btn_secondary:hover {
+    color: white;
+}
+
+.btn_secondary:hover:before {
+    width: 100%;
+}
+
+.btn_tertiary {
+    background-color: #212121;
+    color: white;
+    font-weight: 600;
+    box-shadow: 8px 8px 0 -1px #bdbdbd, 8px 8px #212121;
+    transition: .5s;
+}
+
+.btn_tertiary:hover {
+    box-shadow: 0 0 0;
+}
+
+
+/*-----Formulaire-----*/
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+form input, form textarea {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+form input:focus, form textarea:focus {
+    border-color: black;
+    outline: 0;
+}
+
+form input.mid {
+    width: 47%;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/base.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.jpg">
+    <title>Musée</title>
+</head>
+<body>
+    
+    <header>
+        <div class="header_container wrapper row">
+            <div class="logo_container col1">
+                <a href="index.html"><img class="logo" src="assets/img/logo.jpg"/></a>
+            </div>
+            <nav class="col3">
+                <ul>
+                    <li><a class="fontWeight-SB" href="">Contact</a></li>
+                    <li><a class="fontWeight-SB" href="">Contact</a></li>
+                    <li><a class="fontWeight-SB" href="">Contact</a></li>
+                    <li><a class="fontWeight-SB" href="#events">Evènements</a></li>
+                </ul>
+                <a class="btn btn_primary" href="#contact">Contact</a>
+                <a class="btn btn_tertiary" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="content wrapper">
+        <section id="ticketing" class="row">
+            <div class="gallery col4">
+                <div class="gallery_informations color-white">
+                    <h3 class="h3 margin-0">Fragmentary head of a youth</h3>
+                    <p>10 janvier 1710</p>
+                </div>
+            </div>
+
+            <div class="description col2">
+                <span>10 janvier 1710</span>
+                <h2 class="h2">Fragmentary head of a youth</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic, mollitia tenetur neque possimus sint nemo aliquam quo quis, nesciunt rem debitis esse blanditiis, atque sit. Asperiores, sunt magni!</p>
+                <a class="btn btn_secondary" href="#">Billetterie</a>
+            </div>
+        </section>
+        
+        <section id="events">
+            <h2 class="h2 textAlign-center">Evènements</h2>
+            <div class="events_container row gap">
+                <div class="single_event col2">
+                    <div class="single_event__img" style="background-image: url('assets/img/image2.jpg');"></div>
+                    <h4>Evènement</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
+                </div>
+                <div class="single_event col2">
+                    <div class="single_event__img" style="background-image: url('assets/img/image2.jpg');"></div>
+                    <h4>Evènement</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
+                </div>
+                <div class="single_event col2">
+                    <div class="single_event__img" style="background-image: url('assets/img/image2.jpg');"></div>
+                    <h4>Evènement</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
+                </div>  
+            </div>
+        </section>
+    
+        <section id="contact" class="row">
+            <div class="form col2">
+                <h3 class="h3 textAlign-center">Nous contacter</h3>
+                <form>
+                    <input class="mid" type="text" placeholder="Nom">
+                    <input class="mid" type="text" placeholder="Prénom">
+                    <input class="full" type="text" placeholder="Mail">
+                    <input class="full" type="text" placeholder="Téléphone">
+                    <textarea rows="6" placeholder="Votre message"></textarea>
+                    <input class="btn btn_primary" type="submit" value="Envoyer">
+                </form>
+            </div>
+
+            <div class="map col4">
+                <iframe src="https://snazzymaps.com/embed/428684" width="100%" height="100%" style="border:none;"></iframe>
+
+                <div class="map_information">
+                    <div class="map_information_container">
+                        <p class="single_information phone color-white margin-0">01 40 20 50 50</p>
+                    </div>
+                    <div class="map_information_container">
+                        <p class="single_information place color-white margin-0">Rue de Rivoli, 75001 Paris</p>
+                    </div>
+                    <div class="map_information_container">
+                        <p class="single_information mail color-white margin-0">info@louvre.fr</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+
+</body>
+</html>
