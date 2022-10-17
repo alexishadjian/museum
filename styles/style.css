@@ -21,6 +21,10 @@ header .logo_container a {
     width: fit-content;
 }
 
+.logo_container a {
+    line-height: 0;
+}
+
 header nav {
     display: flex;
     justify-content: flex-end;
@@ -189,5 +193,52 @@ Footer
 
 footer {
     background-color: #bdbdbd; /*Dev*/
-    height: 200px; /*Dev*/
+    /* height: 200px; Dev */
+}
+
+.footer__wrapper {
+    padding: 10px 0;
+    display: flex;
+}
+
+footer .logo_container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+footer .logo {
+    width: 100px;
+    height: 100px;
+}
+
+.footer__info__wrapper {
+    padding: 0 auto;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.network__container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-left: 1px solid black;
+}
+
+.network__icons__container {
+    display: flex;
+}
+
+.network__icons__container>* {
+    margin-left: 10px;
+}
+
+.icon__container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #212121;
 }
