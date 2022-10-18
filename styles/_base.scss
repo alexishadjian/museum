@@ -23,23 +23,44 @@ Font face
 	src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2'), url('../assets/fonts/Montserrat-Bold.ttf') format('opentype');
 }
 
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+
+$fonts: 'Montserrat', sans-serif;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+
+$bleu: #197CB0;
+$white: #ffffff;
+$black: #000000;
+$dark_grey: #212121;
+$grey: #bdbdbd;
+$shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
+$mask: #00000040;
+
+$primary_color: $dark_grey;
+$secondary_color: $grey;
+$bg_color: $green_dark;
 
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
 
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
 html {
+    font-family: $fonts;
     scroll-behavior: smooth;
 }
 
 .wrapper {
     max-width: 1375px;
-    margin: 0 auto;
     width: 95%;
+    margin: 0 auto;
+}
+
+.h1 {
+    font-size: 50px;
 }
 
 .h2 {
@@ -73,7 +94,7 @@ section {
 }
 
 .fontWeight-SB {
-    font-weight: 600;
+    font-weight: $semi-bold;
 }
 
 .gap {
@@ -137,56 +158,50 @@ Modèles
 }
 
 .btn_primary {
-    background-color: #212121;
+    background-color: $primary_color;
     color: white;
-    font-weight: 600;
-}
-
-.btn_primary:hover {
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
-    transform: translate(0, -2px);
+    font-weight: $semi-bold;
+    &:hover {
+        box-shadow: $shadow;
+        transform: translate(0, -2px);
+    }
 }
 
 .btn_secondary {
     background-color: transparent;
     border: 2px solid black;
-    font-weight: 600;
+    font-weight: $semi-bold;
     color: black;
     position: relative;
-}
-
-.btn_secondary:before {
-    content: "";
-    position: absolute;
-    background-color: #212121;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    transition: .2s;
-    z-index: -1;
-}
-
-.btn_secondary:hover {
-    color: white;
-}
-
-.btn_secondary:hover:before {
-    width: 100%;
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: $primary_color;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        transition: .2s;
+        z-index: -1;
+    }
+    &:hover {
+        color: white;
+        &:before {
+            width: 100%;
+        }
+    }
 }
 
 .btn_tertiary {
-    background-color: #212121;
+    background-color: $primary_color;
     color: white;
-    font-weight: 600;
-    box-shadow: 8px 8px 0 -1px #bdbdbd, 8px 8px #212121;
+    font-weight: $semi-bold;
+    box-shadow: 8px 8px 0 -1px #bdbdbd, 8px 8px $primary_color;
     transition: .5s;
+    &:hover {
+        box-shadow: 0 0 0;
+    }
 }
-
-.btn_tertiary:hover {
-    box-shadow: 0 0 0;
-}
-
 
 /*-----Formulaire-----*/
 
@@ -194,23 +209,20 @@ form {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
-}
-
-form input, form textarea {
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid rgb(189, 189, 189);
-    width: 100%;
-    box-sizing: border-box;
-    margin: 20px 0;
-    padding-bottom: 10px;
-}
-
-form input:focus, form textarea:focus {
-    border-color: black;
-    outline: 0;
-}
-
-form input.mid {
-    width: 47%;
+    input, textarea {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid rgb(189, 189, 189);
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px 0;
+        padding-bottom: 10px;
+        &:focus {
+            border-color: black;
+            outline: 0;
+        }
+        &.mid {
+            width: 47%;
+        }
+    }
 }
