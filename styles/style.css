@@ -251,18 +251,19 @@ Variables
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
-* {
-  font-family: "Montserrat", sans-serif;
-}
-
 html {
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
 
 .wrapper {
   max-width: 1375px;
-  margin: 0 auto;
   width: 95%;
+  margin: 0 auto;
+}
+
+.h1 {
+  font-size: 50px;
 }
 
 .h2 {
@@ -427,7 +428,7 @@ form input.mid, form textarea.mid {
 Header
 --------------------------------------------------------------*/
 header {
-  background-color: #bdbdbd;
+  background-color: #727272;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
 header .header_container {
@@ -462,6 +463,7 @@ header .header_container nav ul li {
 header .header_container nav ul li a {
   text-decoration: none;
   padding: 0 20px;
+  color: #ffffff;
 }
 
 /*--------------------------------------------------------------
@@ -478,9 +480,8 @@ Page
 #ticketing .gallery:after {
   content: "";
   position: absolute;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.2509803922);
   inset: 0;
-  opacity: 0.3;
   z-index: -1;
 }
 #ticketing .gallery .gallery_informations {
@@ -503,7 +504,7 @@ Page
   content: "";
   height: 2px;
   width: 40px;
-  background-color: black;
+  background-color: #000000;
   position: absolute;
   left: -50px;
   top: 50%;
@@ -513,7 +514,7 @@ Page
   margin: 10px 0 30px 0;
 }
 #ticketing .description p {
-  color: rgb(114, 114, 114);
+  color: #727272;
   font-size: 20px;
   margin-bottom: 40px;
 }
@@ -543,7 +544,7 @@ Page
 
 /*-----Form-----*/
 #contact {
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 #contact .form {
@@ -582,7 +583,7 @@ Page
 Footer
 --------------------------------------------------------------*/
 footer {
-  background-color: #bdbdbd; /*Dev*/
+  background-color: #727272; /*Dev*/
   /* height: 200px; Dev */
 }
 footer .footer__wrapper {
@@ -600,26 +601,30 @@ footer .footer__wrapper .logo_container .logo {
 }
 footer .footer__wrapper .footer__info__wrapper {
   padding: 0 auto;
-  border-left: 1px solid black;
+  border-left: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+footer .footer__wrapper .footer__info__wrapper p {
+  color: #ffffff;
+}
 footer .footer__wrapper .network__container {
   display: flex;
   justify-content: end;
   align-items: center;
-  border-left: 1px solid black;
+  border-left: 1px solid #ffffff;
 }
 footer .footer__wrapper .network__container .network__icons__container {
   display: flex;
+  gap: 20px;
 }
 footer .footer__wrapper .network__container .network__icons__container .icon__container {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #212121;
+  background-color: #ffffff;
 }
 footer .footer__wrapper .network__container .network__icons__container .icon__container a {
   margin-left: 10px;

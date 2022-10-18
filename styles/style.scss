@@ -36,6 +36,7 @@ header {
                     a {
                         text-decoration: none;
                         padding: 0 20px;
+                        color: $white;
                     }
                 }
             }
@@ -190,24 +191,28 @@ footer {
         }
         .footer__info__wrapper {
             padding: 0 auto;
-            border-left: 1px solid $black;
+            border-left: 1px solid $white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            p {
+                color: $white;
+            }
         }
         .network__container {
             display: flex;
             justify-content: end;
             align-items: center;
-            border-left: 1px solid $black;
+            border-left: 1px solid $white;
             .network__icons__container {
                 display: flex;
+                gap: 20px;
                 .icon__container {
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
-                    background-color: $primary_color;
+                    background-color: $white;
                     a {
                         margin-left: 10px;
                     }
