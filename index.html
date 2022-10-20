@@ -13,9 +13,9 @@
 <body>
     
     <header>
-        <div class="header_container wrapper row">
-            <div class="logo_container col1">
-                <a href="index.html"><img class="logo" src="assets/img/logo.jpg"/></a>
+        <div class="site-header wrapper row">
+            <div class="site-header__logo col1">
+                <a href="#"><img class="logo" src="assets/img/logo.jpg"/></a>
             </div>
             <nav class="col3">
                 <ul>
@@ -28,14 +28,14 @@
     </header>
     
     <main class="content wrapper">
+
         <section id="ticketing" class="row">
             <div class="gallery col4">
-                <div class="gallery_informations color-white">
+                <div class="gallery__informations color-white">
                     <h3 class="h3 margin-0">Fragmentary head of a youth</h3>
                     <p>10 janvier 1710</p>
                 </div>
             </div>
-
             <div class="description col2">
                 <span>10 janvier 1710</span>
                 <h2 class="h2">Fragmentary head of a youth</h2>
@@ -43,30 +43,34 @@
                 <a class="btn btn_secondary" href="#">Billetterie</a>
             </div>
         </section>
+
+        <!------------------------------------------------------------------------------------->
         
         <section id="events">
             <h2 class="h2 textAlign-center">Evènements</h2>
-            <div class="events_container row gap">
-                <div class="single_event col2" style="background-image: url('assets/img/image2.jpg');">
-                    <div class="single_event__desc color-white" >
+            <div class="cards-container row gap">
+                <div class="card col2" style="background-image: url('assets/img/image2.jpg');">
+                    <div class="card__desc color-white" >
                         <h4 class="textAlign-center">Evènement</h4>
                         <p class="textAlign-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
                     </div>
                 </div>
-                <div class="single_event col2" style="background-image: url('assets/img/image2.jpg');">
-                    <div class="single_event__desc color-white" >
+                <div class="card col2" style="background-image: url('assets/img/image2.jpg');">
+                    <div class="card__desc color-white" >
                         <h4 class="textAlign-center">Evènement</h4>
                         <p class="textAlign-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
                     </div>
                 </div>
-                <div class="single_event col2" style="background-image: url('assets/img/image2.jpg');">
-                    <div class="single_event__desc color-white" >
+                <div class="card col2" style="background-image: url('assets/img/image2.jpg');">
+                    <div class="card__desc color-white" >
                         <h4 class="textAlign-center">Evènement</h4>
                         <p class="textAlign-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere hic</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!------------------------------------------------------------------------------------->
     
         <section id="contact" class="row">
             <div class="form col2">
@@ -80,19 +84,18 @@
                     <input class="btn btn_primary" type="submit" value="Envoyer">
                 </form>
             </div>
-
             <div class="map col4">
                 <iframe src="https://snazzymaps.com/embed/428684" width="100%" height="100%" style="border:none;"></iframe>
 
-                <div class="map_information">
-                    <div class="map_information_container">
-                        <p class="single_information phone color-white margin-0">01 40 20 50 50</p>
+                <div class="map__information">
+                    <div class="map__information__single">
+                        <p class="phone color-white margin-0">01 40 20 50 50</p>
                     </div>
-                    <div class="map_information_container">
-                        <p class="single_information place color-white margin-0">Rue de Rivoli, 75001 Paris</p>
+                    <div class="map__information__single">
+                        <p class="place color-white margin-0">Rue de Rivoli, 75001 Paris</p>
                     </div>
-                    <div class="map_information_container">
-                        <p class="single_information mail color-white margin-0">info@louvre.fr</p>
+                    <div class="map__information__single">
+                        <p class="mail color-white margin-0">info@louvre.fr</p>
                     </div>
                 </div>
             </div>
@@ -101,25 +104,24 @@
     </main>
     
     <footer>
-        <div class="footer__wrapper wrapper">
-            <div class="logo_container col2">
-                <a href="index.html"><img class="logo" src="assets/img/logo.jpg"/></a>
+        <div class="site-footer wrapper">
+            <div class="site-footer__logo col2">
+                <a href="#"><img class="logo" src="assets/img/logo.jpg"/></a>
             </div>
-            <div class="footer__info__wrapper col2">
-                <p class="single_information place margin-0">Rue de Rivoli, 75001 Paris</p>
-                <p class="single_information phone margin-0">01 40 20 50 50</p>
-                <p class="single_information mail margin-0">info@louvre.fr</p>
+            <div class="site-footer__informations col2">
+                <p class="place margin-0">Rue de Rivoli, 75001 Paris</p>
+                <p class="phone margin-0">01 40 20 50 50</p>
+                <p class="mail margin-0">info@louvre.fr</p>
             </div>
-            <div class="network__container col2">
-                    <div class="network__icons__container">
-                        <a class="icon__container facebook" href="#"></a>
-                        <a class="icon__container twitter" href="#"></a>
-                        <a class="icon__container instagram" href="#"></a>
-                        <a class="icon__container youtube" href="#"></a>
-                    </div>
+            <div class="site-footer__socials col2">
+                <a class="facebook" href="#"></a>
+                <a class="twitter" href="#"></a>
+                <a class="instagram" href="#"></a>
+                <a class="youtube" href="#"></a>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

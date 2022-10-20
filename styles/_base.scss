@@ -73,7 +73,7 @@ html {
 
 a {
     text-decoration: none;
-    color: black;
+    color: $black;
 }
 
 section {
@@ -81,7 +81,7 @@ section {
 }
 
 .color-white {
-    color: white;
+    color: $white;
 }
 
 .margin-0 {
@@ -158,7 +158,7 @@ Modèles
 
 .btn_primary {
     background-color: $primary_color;
-    color: white;
+    color: $white;
     font-weight: $semi-bold;
     &:hover {
         box-shadow: $shadow;
@@ -168,7 +168,7 @@ Modèles
 
 .btn_secondary {
     background-color: transparent;
-    border: 2px solid black;
+    border: 2px solid $black;
     font-weight: $semi-bold;
     color: black;
     position: relative;
@@ -184,7 +184,7 @@ Modèles
         z-index: -1;
     }
     &:hover {
-        color: white;
+        color: $white;
         &:before {
             width: 100%;
         }
@@ -193,9 +193,9 @@ Modèles
 
 .btn_tertiary {
     background-color: $primary_color;
-    color: white;
+    color: $white;
     font-weight: $semi-bold;
-    box-shadow: 8px 8px 0 -1px #bdbdbd, 8px 8px $primary_color;
+    box-shadow: 8px 8px 0 -1px $secondary_color, 8px 8px $primary_color;
     transition: .5s;
     &:hover {
         box-shadow: 0 0 0;
@@ -217,7 +217,7 @@ form {
         margin: 20px 0;
         padding-bottom: 10px;
         &:focus {
-            border-color: black;
+            border-color: $black;
             outline: 0;
         }
         &.mid {

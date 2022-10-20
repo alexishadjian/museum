@@ -8,9 +8,9 @@ Header
 header {
     background-color: $secondary_color;
     box-shadow: $shadow;
-    .header_container {
+    .site-header {
         padding: 10px 0;
-        .logo_container {
+        &__logo {
             a {
                 display: block;
                 width: fit-content;
@@ -49,7 +49,7 @@ header {
 Page
 --------------------------------------------------------------*/
 
-/*-----Section 1-----*/
+/*-----Ticketing-----*/
 
 #ticketing {
     .gallery {
@@ -65,7 +65,7 @@ Page
             inset: 0;
             z-index: -1;
         }
-        .gallery_informations {
+        &__informations {
             position: absolute;
             left: 50px;
             bottom: 50px;
@@ -107,8 +107,8 @@ Page
 
 #events {
     padding: 50px 0;
-    .events_container  {
-        .single_event {
+    .cards-container  {
+        .card {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -141,15 +141,15 @@ Page
         }
     }
     .map  {
-        .map_information {
+        &__information {
             display: flex;
             justify-content: space-between;
             position: absolute;
             top: 15px;
             right: 15px;
-            .map_information_container {
+            &__single {
                 margin-left: 15px;
-                .single_information {
+                p {
                     padding: 20px 20px 20px 52px;
                     &.phone {
                         background: url('../assets/img/phone.svg') no-repeat 18px center $primary_color;
@@ -175,23 +175,27 @@ Footer
 --------------------------------------------------------------*/
 
 footer {
-    background-color: $secondary_color; /*Dev*/
-    /* height: 200px; Dev */
-    .footer__wrapper {
+    background-color: $secondary_color;
+    .site-footer {
         padding: 10px 0;
         display: flex;
-        .logo_container {
+        &__logo {
             display: flex;
             justify-content: start;
             align-items: center;
-            .logo {
-                width: 100px;
-                height: 100px;
+            a {
+                display: block;
+                width: fit-content;
+                line-height: 0;
+                .logo {
+                    width: 100px;
+                    height: 100px;
+                }
             }
         }
-        .footer__info__wrapper {
-            padding: 0 auto;
+        &__informations {
             border-left: 1px solid $white;
+            border-right: 1px solid $white;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -200,23 +204,16 @@ footer {
                 color: $white;
             }
         }
-        .network__container {
+        &__socials {
             display: flex;
             justify-content: end;
             align-items: center;
-            border-left: 1px solid $white;
-            .network__icons__container {
-                display: flex;
-                gap: 20px;
-                .icon__container {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    background-color: $white;
-                    a {
-                        margin-left: 10px;
-                    }
-                }
+            gap: 20px;
+            a {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $white;
             }
         }
     }

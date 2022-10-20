@@ -277,7 +277,7 @@ html {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 section {
@@ -285,7 +285,7 @@ section {
 }
 
 .color-white {
-  color: white;
+  color: #ffffff;
 }
 
 .margin-0 {
@@ -357,7 +357,7 @@ Modèles
 
 .btn_primary {
   background-color: #212121;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 .btn_primary:hover {
@@ -367,7 +367,7 @@ Modèles
 
 .btn_secondary {
   background-color: transparent;
-  border: 2px solid black;
+  border: 2px solid #000000;
   font-weight: 600;
   color: black;
   position: relative;
@@ -384,7 +384,7 @@ Modèles
   z-index: -1;
 }
 .btn_secondary:hover {
-  color: white;
+  color: #ffffff;
 }
 .btn_secondary:hover:before {
   width: 100%;
@@ -392,9 +392,9 @@ Modèles
 
 .btn_tertiary {
   background-color: #212121;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
-  box-shadow: 8px 8px 0 -1px #bdbdbd, 8px 8px #212121;
+  box-shadow: 8px 8px 0 -1px #727272, 8px 8px #212121;
   transition: 0.5s;
 }
 .btn_tertiary:hover {
@@ -417,7 +417,7 @@ form input, form textarea {
   padding-bottom: 10px;
 }
 form input:focus, form textarea:focus {
-  border-color: black;
+  border-color: #000000;
   outline: 0;
 }
 form input.mid, form textarea.mid {
@@ -431,36 +431,36 @@ header {
   background-color: #727272;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
-header .header_container {
+header .site-header {
   padding: 10px 0;
 }
-header .header_container .logo_container a {
+header .site-header__logo a {
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   line-height: 0;
 }
-header .header_container .logo_container a .logo {
+header .site-header__logo a .logo {
   width: 50px;
   height: 50px;
 }
-header .header_container nav {
+header .site-header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 40px;
 }
-header .header_container nav ul {
+header .site-header nav ul {
   display: flex;
   justify-content: space-between;
   padding: 0;
   margin: 0;
 }
-header .header_container nav ul li {
+header .site-header nav ul li {
   list-style: none;
 }
-header .header_container nav ul li a {
+header .site-header nav ul li a {
   text-decoration: none;
   padding: 0 20px;
   color: #ffffff;
@@ -469,7 +469,7 @@ header .header_container nav ul li a {
 /*--------------------------------------------------------------
 Page
 --------------------------------------------------------------*/
-/*-----Section 1-----*/
+/*-----Ticketing-----*/
 #ticketing .gallery {
   background: url("../assets/img/image1.jpg") no-repeat center;
   background-size: cover;
@@ -484,7 +484,7 @@ Page
   inset: 0;
   z-index: -1;
 }
-#ticketing .gallery .gallery_informations {
+#ticketing .gallery__informations {
   position: absolute;
   left: 50px;
   bottom: 50px;
@@ -523,7 +523,7 @@ Page
 #events {
   padding: 50px 0;
 }
-#events .events_container .single_event {
+#events .cards-container .card {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -534,7 +534,7 @@ Page
   padding: 20px;
   z-index: 1;
 }
-#events .events_container .single_event:after {
+#events .cards-container .card:after {
   content: "";
   position: absolute;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%);
@@ -553,28 +553,28 @@ Page
 #contact .form h3 {
   margin-top: 0;
 }
-#contact .map .map_information {
+#contact .map__information {
   display: flex;
   justify-content: space-between;
   position: absolute;
   top: 15px;
   right: 15px;
 }
-#contact .map .map_information .map_information_container {
+#contact .map__information__single {
   margin-left: 15px;
 }
-#contact .map .map_information .map_information_container .single_information {
+#contact .map__information__single p {
   padding: 20px 20px 20px 52px;
 }
-#contact .map .map_information .map_information_container .single_information.phone {
+#contact .map__information__single p.phone {
   background: url("../assets/img/phone.svg") no-repeat 18px center #212121;
   background-size: 20px;
 }
-#contact .map .map_information .map_information_container .single_information.place {
+#contact .map__information__single p.place {
   background: url("../assets/img/place.svg") no-repeat 18px center #212121;
   background-size: 20px;
 }
-#contact .map .map_information .map_information_container .single_information.mail {
+#contact .map__information__single p.mail {
   background: url("../assets/img/mail.svg") no-repeat 18px center #212121;
   background-size: 20px;
 }
@@ -583,49 +583,48 @@ Page
 Footer
 --------------------------------------------------------------*/
 footer {
-  background-color: #727272; /*Dev*/
-  /* height: 200px; Dev */
+  background-color: #727272;
 }
-footer .footer__wrapper {
+footer .site-footer {
   padding: 10px 0;
   display: flex;
 }
-footer .footer__wrapper .logo_container {
+footer .site-footer__logo {
   display: flex;
   justify-content: start;
   align-items: center;
 }
-footer .footer__wrapper .logo_container .logo {
+footer .site-footer__logo a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 0;
+}
+footer .site-footer__logo a .logo {
   width: 100px;
   height: 100px;
 }
-footer .footer__wrapper .footer__info__wrapper {
-  padding: 0 auto;
+footer .site-footer__informations {
   border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-footer .footer__wrapper .footer__info__wrapper p {
+footer .site-footer__informations p {
   color: #ffffff;
 }
-footer .footer__wrapper .network__container {
+footer .site-footer__socials {
   display: flex;
   justify-content: end;
   align-items: center;
-  border-left: 1px solid #ffffff;
-}
-footer .footer__wrapper .network__container .network__icons__container {
-  display: flex;
   gap: 20px;
 }
-footer .footer__wrapper .network__container .network__icons__container .icon__container {
+footer .site-footer__socials a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: #ffffff;
-}
-footer .footer__wrapper .network__container .network__icons__container .icon__container a {
-  margin-left: 10px;
 }/*# sourceMappingURL=style.css.map */
