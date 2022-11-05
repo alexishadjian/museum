@@ -277,7 +277,6 @@ html {
 
 a {
   text-decoration: none;
-  color: #000000;
 }
 
 section {
@@ -356,8 +355,6 @@ Modèles
 }
 
 .btn_primary {
-  background-color: #212121;
-  color: #ffffff;
   font-weight: 600;
 }
 .btn_primary:hover {
@@ -367,15 +364,12 @@ Modèles
 
 .btn_secondary {
   background-color: transparent;
-  border: 2px solid #000000;
   font-weight: 600;
-  color: black;
   position: relative;
 }
 .btn_secondary:before {
   content: "";
   position: absolute;
-  background-color: #212121;
   top: 0;
   left: 0;
   width: 0;
@@ -391,10 +385,10 @@ Modèles
 }
 
 .btn_tertiary {
-  background-color: #212121;
+  background-color: #252525;
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 8px 8px 0 -1px #727272, 8px 8px #212121;
+  box-shadow: 8px 8px 0 -1px #727272, 8px 8px #252525;
   transition: 0.5s;
 }
 .btn_tertiary:hover {
@@ -425,10 +419,79 @@ form input.mid, form textarea.mid {
 }
 
 /*--------------------------------------------------------------
+Light mode / Dark mode
+--------------------------------------------------------------*/
+/*-----Light-----*/
+/*-----Dark-----*/
+/*-----Detector-----*/
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  html a {
+    color: #000000;
+  }
+  html .btn_primary {
+    background-color: #252525;
+    color: #ffffff;
+  }
+  html .btn_secondary {
+    color: #000000;
+    border: 2px solid #252525;
+  }
+  html .btn_secondary:before {
+    background-color: #252525;
+  }
+  html .btn_secondary:hover {
+    color: #ffffff;
+  }
+  html header {
+    background-color: #ffffff;
+  }
+  html #ticketing .description span:before {
+    background-color: #000000;
+  }
+  html #ticketing .description p {
+    color: #727272;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #252525;
+    color: #ffffff;
+  }
+  html a {
+    color: #ffffff;
+  }
+  html .btn_primary {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  html .btn_secondary {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  html .btn_secondary:before {
+    background-color: #ffffff;
+  }
+  html .btn_secondary:hover {
+    color: #000000;
+  }
+  html header {
+    background-color: #252525;
+  }
+  html #ticketing .description span:before {
+    background-color: #ffffff;
+  }
+  html #ticketing .description p {
+    color: #a5a5a5;
+  }
+}
+/*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 header {
-  background-color: #727272;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
 header .site-header {
@@ -463,7 +526,6 @@ header .site-header nav ul li {
 header .site-header nav ul li a {
   text-decoration: none;
   padding: 0 20px;
-  color: #ffffff;
 }
 
 /*--------------------------------------------------------------
@@ -504,7 +566,6 @@ Page
   content: "";
   height: 2px;
   width: 40px;
-  background-color: #000000;
   position: absolute;
   left: -50px;
   top: 50%;
@@ -514,7 +575,6 @@ Page
   margin: 10px 0 30px 0;
 }
 #ticketing .description p {
-  color: #727272;
   font-size: 20px;
   margin-bottom: 40px;
 }
@@ -567,15 +627,15 @@ Page
   padding: 20px 20px 20px 52px;
 }
 #contact .map__information__single p.phone {
-  background: url("../assets/img/phone.svg") no-repeat 18px center #212121;
+  background: url("../assets/img/phone.svg") no-repeat 18px center #252525;
   background-size: 20px;
 }
 #contact .map__information__single p.place {
-  background: url("../assets/img/place.svg") no-repeat 18px center #212121;
+  background: url("../assets/img/place.svg") no-repeat 18px center #252525;
   background-size: 20px;
 }
 #contact .map__information__single p.mail {
-  background: url("../assets/img/mail.svg") no-repeat 18px center #212121;
+  background: url("../assets/img/mail.svg") no-repeat 18px center #252525;
   background-size: 20px;
 }
 

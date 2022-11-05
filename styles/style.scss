@@ -1,12 +1,12 @@
 @import 'normalize';
 @import 'base';
+@import 'colors';
 
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 
 header {
-    background-color: $secondary_color;
     box-shadow: $shadow;
     .site-header {
         padding: 10px 0;
@@ -36,7 +36,6 @@ header {
                     a {
                         text-decoration: none;
                         padding: 0 20px;
-                        color: $white;
                     }
                 }
             }
@@ -84,7 +83,6 @@ Page
                 content: '';
                 height: 2px;
                 width: 40px;
-                background-color: $black;
                 position: absolute;
                 left: -50px;
                 top: 50%;
@@ -95,7 +93,6 @@ Page
             margin: 10px 0 30px 0;
         }
         p {
-            color: $secondary_color;
             font-size: 20px;
             margin-bottom: 40px;
         }
@@ -152,15 +149,15 @@ Page
                 p {
                     padding: 20px 20px 20px 52px;
                     &.phone {
-                        background: url('../assets/img/phone.svg') no-repeat 18px center $primary_color;
+                        background: url('../assets/img/phone.svg') no-repeat 18px center $dark_grey;
                         background-size: 20px;
                     }
                     &.place {
-                        background: url('../assets/img/place.svg') no-repeat 18px center $primary_color;
+                        background: url('../assets/img/place.svg') no-repeat 18px center $dark_grey;
                         background-size: 20px;
                     }
                     &.mail {
-                        background: url('../assets/img/mail.svg') no-repeat 18px center $primary_color;
+                        background: url('../assets/img/mail.svg') no-repeat 18px center $dark_grey;
                         background-size: 20px;
                     }
                 }
@@ -175,7 +172,7 @@ Footer
 --------------------------------------------------------------*/
 
 footer {
-    background-color: $secondary_color;
+    background-color: $grey;
     .site-footer {
         padding: 10px 0;
         display: flex;
