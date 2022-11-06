@@ -249,10 +249,77 @@ Font face
 Variables
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+Colors
+--------------------------------------------------------------*/
+html {
+  --text_color: #000000;
+  --link_color: #000000;
+  --background_color: #ffffff;
+  --border_color: #000000;
+  --reverse_background_color: #000000;
+  --reverse_text_color: #ffffff;
+  --icon_color: #000000;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    --text_color: #000000;
+    --link_color: #000000;
+    --background_color: #ffffff;
+    --border_color: #000000;
+    --reverse_background_color: #000000;
+    --reverse_text_color: #ffffff;
+    --icon_color: #000000;
+    color-scheme: light;
+  }
+  .indicator {
+    transform: translateX(100%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --text_color: #ffffff;
+    --link_color: #ffffff;
+    --background_color: #252525;
+    --border_color: #ffffff;
+    --reverse_background_color: #ffffff;
+    --reverse_text_color: #000000;
+    --icon_color: #ffffff;
+    color-scheme: dark;
+  }
+  .indicator {
+    transform: translateX(0);
+  }
+}
+html.light {
+  --text_color: #000000;
+  --link_color: #000000;
+  --background_color: #ffffff;
+  --border_color: #000000;
+  --reverse_background_color: #000000;
+  --reverse_text_color: #ffffff;
+  --icon_color: #000000;
+  color-scheme: light;
+}
+
+html.dark {
+  --text_color: #ffffff;
+  --link_color: #ffffff;
+  --background_color: #252525;
+  --border_color: #ffffff;
+  --reverse_background_color: #ffffff;
+  --reverse_text_color: #000000;
+  --icon_color: #ffffff;
+  color-scheme: dark;
+}
+
+/*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
 html {
   font-family: "Montserrat", sans-serif;
+  background-color: var(--background_color);
+  color: var(--text_color);
   scroll-behavior: smooth;
 }
 
@@ -277,6 +344,7 @@ html {
 
 a {
   text-decoration: none;
+  color: var(--link_color);
 }
 
 section {
@@ -355,7 +423,9 @@ Modèles
 }
 
 .btn_primary {
+  background-color: var(--reverse_background_color);
   font-weight: 600;
+  color: var(--reverse_text_color);
 }
 .btn_primary:hover {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
@@ -366,10 +436,13 @@ Modèles
   background-color: transparent;
   font-weight: 600;
   position: relative;
+  border: 2px solid var(--reverse_background_color);
+  color: var(--text_color);
 }
 .btn_secondary:before {
   content: "";
   position: absolute;
+  background-color: var(--reverse_background_color);
   top: 0;
   left: 0;
   width: 0;
@@ -378,17 +451,17 @@ Modèles
   z-index: -1;
 }
 .btn_secondary:hover {
-  color: #ffffff;
+  color: var(--reverse_text_color);
 }
 .btn_secondary:hover:before {
   width: 100%;
 }
 
 .btn_tertiary {
-  background-color: #252525;
-  color: #ffffff;
+  background-color: var(--background_color);
+  color: var(--text_color);
   font-weight: 600;
-  box-shadow: 8px 8px 0 -1px #727272, 8px 8px #252525;
+  box-shadow: 8px 8px 0 -1px #727272, 8px 8px var(--background_color);
   transition: 0.5s;
 }
 .btn_tertiary:hover {
@@ -419,94 +492,59 @@ form input.mid, form textarea.mid {
 }
 
 /*--------------------------------------------------------------
-Light mode / Dark mode
---------------------------------------------------------------*/
-/*-----Light-----*/
-/*-----Dark-----*/
-/*-----Detector-----*/
-@media (prefers-color-scheme: light) {
-  html {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  html a {
-    color: #000000;
-  }
-  html .btn_primary {
-    background-color: #252525;
-    color: #ffffff;
-  }
-  html .btn_secondary {
-    color: #000000;
-    border: 2px solid #252525;
-  }
-  html .btn_secondary:before {
-    background-color: #252525;
-  }
-  html .btn_secondary:hover {
-    color: #ffffff;
-  }
-  html header {
-    background-color: #ffffff;
-  }
-  html #ticketing .description span:before {
-    background-color: #000000;
-  }
-  html #ticketing .description p {
-    color: #727272;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: #252525;
-    color: #ffffff;
-  }
-  html a {
-    color: #ffffff;
-  }
-  html .btn_primary {
-    background-color: #ffffff;
-    color: #000000;
-  }
-  html .btn_secondary {
-    color: #ffffff;
-    border: 2px solid #ffffff;
-  }
-  html .btn_secondary:before {
-    background-color: #ffffff;
-  }
-  html .btn_secondary:hover {
-    color: #000000;
-  }
-  html header {
-    background-color: #252525;
-  }
-  html #ticketing .description span:before {
-    background-color: #ffffff;
-  }
-  html #ticketing .description p {
-    color: #a5a5a5;
-  }
-}
-/*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 header {
+  background-color: var(--background_color);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
 header .site-header {
   padding: 10px 0;
 }
-header .site-header__logo a {
+header .site-header__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .site-header__left a {
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   line-height: 0;
 }
-header .site-header__logo a .logo {
+header .site-header__left a svg {
   width: 50px;
   height: 50px;
+}
+header .site-header__left a svg rect, header .site-header__left a svg path {
+  fill: var(--reverse_background_color);
+}
+header .site-header__left__theme-switcher {
+  width: 55px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--reverse_background_color);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+header .site-header__left__theme-switcher .indicator {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--background_color);
+  transition: 0.5s;
+  margin-left: 5px;
+}
+header .site-header__left__theme-switcher .indicator.light {
+  transform: translateX(100%);
+  box-shadow: inset 8px -4px 0px 0px var(--background_color);
+}
+header .site-header__left__theme-switcher .indicator.dark {
+  transform: translateX(0);
+  box-shadow: inset 15px -4px 0px 15px var(--background_color);
 }
 header .site-header nav {
   display: flex;
@@ -564,6 +602,7 @@ Page
 }
 #ticketing .description span:before {
   content: "";
+  background-color: var(--reverse_background_color);
   height: 2px;
   width: 40px;
   position: absolute;
@@ -577,6 +616,7 @@ Page
 #ticketing .description p {
   font-size: 20px;
   margin-bottom: 40px;
+  color: var(--text_color);
 }
 
 /*-----Events-----*/
@@ -621,29 +661,30 @@ Page
   right: 15px;
 }
 #contact .map__information__single {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background_color);
   margin-left: 15px;
+  padding: 20px;
+}
+#contact .map__information__single svg {
+  width: 20px;
+  height: 20px;
+}
+#contact .map__information__single svg path {
+  fill: var(--text_color);
 }
 #contact .map__information__single p {
-  padding: 20px 20px 20px 52px;
-}
-#contact .map__information__single p.phone {
-  background: url("../assets/img/phone.svg") no-repeat 18px center #252525;
-  background-size: 20px;
-}
-#contact .map__information__single p.place {
-  background: url("../assets/img/place.svg") no-repeat 18px center #252525;
-  background-size: 20px;
-}
-#contact .map__information__single p.mail {
-  background: url("../assets/img/mail.svg") no-repeat 18px center #252525;
-  background-size: 20px;
+  padding-left: 20px;
+  color: var(--text_color);
 }
 
 /*--------------------------------------------------------------
 Footer
 --------------------------------------------------------------*/
 footer {
-  background-color: #727272;
+  background-color: var(--background_color);
 }
 footer .site-footer {
   padding: 10px 0;
