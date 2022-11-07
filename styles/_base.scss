@@ -83,7 +83,8 @@ html {
     }
 
     .indicator {
-        transform: translateX(100%);
+        transform: translateX(25px);
+        box-shadow: inset 15px -4px 0px 15px var(--background_color);
     }
 
 }
@@ -97,6 +98,7 @@ html {
 
     .indicator {
         transform: translateX(0);
+        box-shadow: inset 8px -4px 0px 0px var(--background_color);
     }
 
 }
@@ -288,7 +290,7 @@ form {
         margin: 20px 0;
         padding-bottom: 10px;
         &:focus {
-            border-color: $black;
+            border-color: var(--reverse_background_color);
             outline: 0;
         }
         &.mid {

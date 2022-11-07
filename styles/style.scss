@@ -35,21 +35,19 @@ header {
                 align-items: center;
                 cursor: pointer;
                 .indicator {
-
-                    content: "";
                     width: 20px;
                     height: 20px;
                     border-radius: 50%;
-                    background: var(--background_color);
+                    background-color: var(--reverse_background_color);
                     transition: .5s;
-                    margin-left: 5px;
+                    margin: 0 5px;
                     &.light {
-                        transform: translateX(100%);
-                        box-shadow: inset 8px -4px 0px 0px var(--background_color);
+                        transform: translateX(25px);
+                        box-shadow: inset 15px -4px 0px 15px var(--background_color);
                     }
                     &.dark {
                         transform: translateX(0);
-                        box-shadow: inset 15px -4px 0px 15px var(--background_color);
+                        box-shadow: inset 8px -4px 0px 0px var(--background_color);
                     }
                 }
             }
@@ -194,7 +192,7 @@ Page
                     }
                 }
                 p {
-                    padding-left: 20px;
+                    padding-left: 15px;
                     color: var(--text_color);
                 }
             }
@@ -227,14 +225,14 @@ footer {
             }
         }
         &__informations {
-            border-left: 1px solid $white;
-            border-right: 1px solid $white;
+            border-left: 1px solid var(--border_color);
+            border-right: 1px solid var(--border_color);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             p {
-                color: $white;
+                color: var(--text_color);
             }
         }
         &__socials {
@@ -246,7 +244,7 @@ footer {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background-color: $white;
+                background-color: var(--reverse_background_color);
             }
         }
     }

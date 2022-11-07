@@ -273,7 +273,8 @@ html {
     color-scheme: light;
   }
   .indicator {
-    transform: translateX(100%);
+    transform: translateX(25px);
+    box-shadow: inset 15px -4px 0px 15px var(--background_color);
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -289,6 +290,7 @@ html {
   }
   .indicator {
     transform: translateX(0);
+    box-shadow: inset 8px -4px 0px 0px var(--background_color);
   }
 }
 html.light {
@@ -484,7 +486,7 @@ form input, form textarea {
   padding-bottom: 10px;
 }
 form input:focus, form textarea:focus {
-  border-color: #000000;
+  border-color: var(--reverse_background_color);
   outline: 0;
 }
 form input.mid, form textarea.mid {
@@ -530,21 +532,20 @@ header .site-header__left__theme-switcher {
   cursor: pointer;
 }
 header .site-header__left__theme-switcher .indicator {
-  content: "";
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--background_color);
+  background-color: var(--reverse_background_color);
   transition: 0.5s;
-  margin-left: 5px;
+  margin: 0 5px;
 }
 header .site-header__left__theme-switcher .indicator.light {
-  transform: translateX(100%);
-  box-shadow: inset 8px -4px 0px 0px var(--background_color);
+  transform: translateX(25px);
+  box-shadow: inset 15px -4px 0px 15px var(--background_color);
 }
 header .site-header__left__theme-switcher .indicator.dark {
   transform: translateX(0);
-  box-shadow: inset 15px -4px 0px 15px var(--background_color);
+  box-shadow: inset 8px -4px 0px 0px var(--background_color);
 }
 header .site-header nav {
   display: flex;
@@ -676,7 +677,7 @@ Page
   fill: var(--text_color);
 }
 #contact .map__information__single p {
-  padding-left: 20px;
+  padding-left: 15px;
   color: var(--text_color);
 }
 
@@ -707,15 +708,15 @@ footer .site-footer__logo a .logo {
   height: 100px;
 }
 footer .site-footer__informations {
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+  border-left: 1px solid var(--border_color);
+  border-right: 1px solid var(--border_color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 footer .site-footer__informations p {
-  color: #ffffff;
+  color: var(--text_color);
 }
 footer .site-footer__socials {
   display: flex;
@@ -727,5 +728,5 @@ footer .site-footer__socials a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: var(--reverse_background_color);
 }/*# sourceMappingURL=style.css.map */
