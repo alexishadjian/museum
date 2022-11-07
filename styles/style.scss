@@ -165,16 +165,22 @@ Page
             cursor: pointer;
             z-index: 1;
             &:hover {
-                .card__link {
+                &:after {
                     opacity: .4;
                 }
             }
-            &__link {
+            &:after {
+                content: "";
                 position: absolute;
-                transition: .3s;
-                background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
                 inset: 0;
                 z-index: -1;
+                background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
+                transition: .3s;
+            }
+            &__link {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
             }
         }
     }

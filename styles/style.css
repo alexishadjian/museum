@@ -661,15 +661,21 @@ Page
   cursor: pointer;
   z-index: 1;
 }
-#events .cards-container .card:hover .card__link {
+#events .cards-container .card:hover:after {
   opacity: 0.4;
+}
+#events .cards-container .card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%);
+  transition: 0.3s;
 }
 #events .cards-container .card__link {
   position: absolute;
-  transition: 0.3s;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 70%);
   inset: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 /*-----Form-----*/
