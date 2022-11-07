@@ -1,6 +1,24 @@
 jQuery(document).ready(function($){
 
     /*--------------------------------------------------------------
+    Header nav fix scroll
+    --------------------------------------------------------------*/
+
+    $(window).on('scroll', function() {	
+ 
+        if ($(window).scrollTop() > 10 ) { 
+            $('header').addClass('scroll');
+       
+        } else if ($(window).scrollTop() < 10 )  { 
+            $('header').removeClass('scroll');
+       
+        }
+    
+    });
+
+
+
+    /*--------------------------------------------------------------
     Switch dark / light mode
     --------------------------------------------------------------*/
 

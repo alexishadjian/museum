@@ -125,6 +125,16 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
 .wrapper {
     max-width: 1375px;
     width: 95%;
@@ -151,6 +161,9 @@ a {
 
 section {
     margin: 80px 0;
+    &:first-child {
+        margin-top: 150px;
+    }
 }
 
 .color-white {

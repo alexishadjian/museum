@@ -8,8 +8,20 @@ Header
 header {
     background-color: var(--background_color);
     box-shadow: $shadow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    z-index: 10;
+    &.scroll {
+        .site-header {
+            padding: 5px 0;
+        }
+    }
     .site-header {
-        padding: 10px 0;
+        padding: 15px 0;
+        transition: .3s;
         &__left {
             display: flex;
             justify-content: space-between;
@@ -137,6 +149,9 @@ Page
 
 #events {
     padding: 50px 0;
+    h2 {
+        margin-top: 0;
+    }
     .cards-container  {
         .card {
             background-repeat: no-repeat;
@@ -145,12 +160,18 @@ Page
             position: relative;
             display: flex;
             align-items: flex-end;
-            height: 500px;
+            height: 560px;
             padding: 20px;
+            cursor: pointer;
             z-index: 1;
-            &:after {
-                content: "";
+            &:hover {
+                .card__link {
+                    opacity: .4;
+                }
+            }
+            &__link {
                 position: absolute;
+                transition: .3s;
                 background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 70%);
                 inset: 0;
                 z-index: -1;
@@ -218,21 +239,43 @@ footer {
                 display: block;
                 width: fit-content;
                 line-height: 0;
-                .logo {
-                    width: 100px;
-                    height: 100px;
+                svg {
+                    width: 50px;
+                    height: 50px;
+                    rect, path{
+                        fill: var(--reverse_background_color);
+                    }
                 }
             }
         }
         &__informations {
-            border-left: 1px solid var(--border_color);
-            border-right: 1px solid var(--border_color);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             p {
                 color: var(--text_color);
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                margin: 0;
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        padding: 0 20px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                }
             }
         }
         &__socials {
@@ -244,7 +287,19 @@ footer {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background-color: var(--reverse_background_color);
+                &:hover {
+                    svg {
+                        transform: translate(0, -2px);
+                    }
+                }
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    transition: .3s;
+                    path, rect, circle, line {
+                        stroke: var(--reverse_background_color);
+                    }
+                }
             }
         }
     }
