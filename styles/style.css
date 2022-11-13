@@ -542,7 +542,7 @@ header .site-header__left a svg {
   height: 50px;
 }
 header .site-header__left a svg rect, header .site-header__left a svg path {
-  fill: var(--reverse_background_color);
+  fill: var(--icon_color);
 }
 header .site-header__left__theme-switcher {
   width: 55px;
@@ -743,7 +743,7 @@ footer .site-footer__logo a svg {
   height: 50px;
 }
 footer .site-footer__logo a svg rect, footer .site-footer__logo a svg path {
-  fill: var(--reverse_background_color);
+  fill: var(--icon_color);
 }
 footer .site-footer__informations {
   display: flex;
@@ -795,5 +795,5 @@ footer .site-footer__socials a svg {
   transition: 0.3s;
 }
 footer .site-footer__socials a svg path, footer .site-footer__socials a svg rect, footer .site-footer__socials a svg circle, footer .site-footer__socials a svg line {
-  stroke: var(--reverse_background_color);
+  stroke: var(--icon_color);
 }/*# sourceMappingURL=style.css.map */

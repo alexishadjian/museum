@@ -34,7 +34,7 @@ header {
                     width: 50px;
                     height: 50px;
                     rect, path{
-                        fill: var(--reverse_background_color);
+                        fill: var(--icon_color);
                     }
                 }
             }
@@ -249,7 +249,7 @@ footer {
                     width: 50px;
                     height: 50px;
                     rect, path{
-                        fill: var(--reverse_background_color);
+                        fill: var(--icon_color);
                     }
                 }
             }
@@ -303,7 +303,7 @@ footer {
                     height: 30px;
                     transition: .3s;
                     path, rect, circle, line {
-                        stroke: var(--reverse_background_color);
+                        stroke: var(--icon_color);
                     }
                 }
             }
