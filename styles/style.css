@@ -251,48 +251,6 @@ Variables
 /*--------------------------------------------------------------
 Colors
 --------------------------------------------------------------*/
-html {
-  --text_color: #000000;
-  --link_color: #000000;
-  --background_color: #ffffff;
-  --border_color: #000000;
-  --reverse_background_color: #000000;
-  --reverse_text_color: #ffffff;
-  --icon_color: #000000;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    --text_color: #000000;
-    --link_color: #000000;
-    --background_color: #ffffff;
-    --border_color: #000000;
-    --reverse_background_color: #000000;
-    --reverse_text_color: #ffffff;
-    --icon_color: #000000;
-    color-scheme: light;
-  }
-  .indicator {
-    transform: translateX(25px);
-    box-shadow: inset 15px -4px 0px 15px var(--background_color);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  html {
-    --text_color: #ffffff;
-    --link_color: #ffffff;
-    --background_color: #252525;
-    --border_color: #ffffff;
-    --reverse_background_color: #ffffff;
-    --reverse_text_color: #000000;
-    --icon_color: #ffffff;
-    color-scheme: dark;
-  }
-  .indicator {
-    transform: translateX(0);
-    box-shadow: inset 8px -4px 0px 0px var(--background_color);
-  }
-}
 html.light {
   --text_color: #000000;
   --link_color: #000000;
@@ -301,6 +259,7 @@ html.light {
   --reverse_background_color: #000000;
   --reverse_text_color: #ffffff;
   --icon_color: #000000;
+  --theme_color: light;
   color-scheme: light;
 }
 
@@ -312,6 +271,7 @@ html.dark {
   --reverse_background_color: #ffffff;
   --reverse_text_color: #000000;
   --icon_color: #ffffff;
+  --theme_color: dark;
   color-scheme: dark;
 }
 
@@ -322,7 +282,11 @@ html {
   font-family: "Montserrat", sans-serif;
   background-color: var(--background_color);
   color: var(--text_color);
+  color-scheme: var(--theme_color);
   scroll-behavior: smooth;
+  transition: 0.2s;
+  display: none;
+  opacity: 0;
 }
 
 body {
@@ -796,4 +760,4 @@ footer .site-footer__socials a svg {
 }
 footer .site-footer__socials a svg path, footer .site-footer__socials a svg rect, footer .site-footer__socials a svg circle, footer .site-footer__socials a svg line {
   stroke: var(--icon_color);
-}/*# sourceMappingURL=style.css.map */
+}

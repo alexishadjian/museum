@@ -20,127 +20,85 @@ jQuery(document).ready(function($){
     Switch dark / light mode
     --------------------------------------------------------------*/
 
-    //switchState c'est la position du switcher
-    //colorScheme c'est le theme de l'utilisateur
+    //Theme synchronization
+    function themeSynch() {
 
+        if ( colorScheme == 'light' ) {
 
+            localStorage.setItem('colorScheme', 'light');
+            $('html').addClass('light').removeClass('dark');
+            $('.indicator').addClass('light').removeClass('dark');
+            
+        } else if ( colorScheme == 'dark' ) {
 
-    // Detect default color scheme
-    if( localStorage.getItem('colorScheme') ) {
-        var switchState = localStorage.getItem('colorScheme');
-   	}
-
-
-    switchTheme();
-
-    // Detect change
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        var colorScheme = event.matches ? "dark" : "light";
-
-        if ( colorScheme === "dark" ) {
-            switchState = "dark";
-        } else {
-            switchState = "light";
+            localStorage.setItem('colorScheme', 'dark');
+            $('html').addClass('dark').removeClass('light');
+            $('.indicator').addClass('dark').removeClass('light');
+            
         }
 
-        switchTheme();
-    });
+    }
 
+    //Theme switcher
+    function themeSwitch() {
 
-    // Switch
-	$('.site-header__left__theme-switcher').on('click', function() {
-		if( switchState === 'dark' ) {
-			switchState = 'light';
-		} else {
-			switchState = 'dark';
-		}
+        if ( colorScheme == 'light' ) {
+            
+            colorScheme = 'dark';
+            localStorage.setItem('colorScheme', 'dark');
+            $('html').addClass('dark').removeClass('light');
+            $('.indicator').addClass('dark').removeClass('light');
+            
+        } else if ( colorScheme == 'dark' ) {
 
-		switchTheme();
+            colorScheme = 'light';
+            localStorage.setItem('colorScheme', 'light');
+            $('html').addClass('light').removeClass('dark');
+            $('.indicator').addClass('light').removeClass('dark');
+            
+        }
+
+    }
+    
+    //Detect current theme
+    if( localStorage.getItem('colorScheme') ) {
+
+        colorScheme = localStorage.getItem('colorScheme');
+
+    } else {
+
+        if ( window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ) {
+
+            colorScheme = 'light';
+            localStorage.setItem('colorScheme', 'light');
+
+        } else if ( window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+            
+            colorScheme = 'dark';
+            localStorage.setItem('colorScheme', 'dark');
+
+        }
+
+    }
+
+    themeSynch()
+
+    //Detect system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+
+		colorScheme = e.matches ? 'dark' : 'light';
+		themeSynch();
+
 	});
 
+    //Toggle button
+    $(".site-header__left__theme-switcher").on('click', function()  {
 
-    // Function
-    function switchTheme() {
-		if ( switchState == 'dark' ) {
-			localStorage.setItem('colorScheme', 'dark');
-			$('html').addClass('dark').removeClass('light');
-			$('.indicator').addClass('dark').removeClass('light');
-			
-		} else if ( switchState == 'light' ) {
-			localStorage.setItem('colorScheme', 'light');
-			$('html').addClass('light').removeClass('dark');
-			$('.indicator').addClass('light').removeClass('dark');
-			
-		}
-	}
+        themeSwitch();
 
+    });
 
-
-
-
-
-
-
-
-
-    //Prototype
-
-    // $(".site-header__left__theme-switcher").on('click', function()  {
-
-    //     if ( colorScheme == 'light' ) {
-    //         localStorage.setItem('colorScheme', 'dark');
-    //         $('html').addClass('dark').removeClass('light');
-    //         $('.indicator').addClass('dark').removeClass('light');
-            
-    //     } else if ( colorScheme == 'dark' ) {
-    //         localStorage.setItem('colorScheme', 'light');
-    //         $('html').addClass('light').removeClass('dark');
-    //         $('.indicator').addClass('light').removeClass('dark');
-            
-    //     }
-
-    // });
-
-    // $(".site-header__left__theme-switcher").on('click', function()  {
-
-    //     if ( $('html').hasClass('light') ) {
-
-    //         localStorage.setItem('currentScheme', 'dark');
-    //         $('html').addClass('dark').removeClass('light');
-    //         $('.indicator').addClass('dark').removeClass('light');
-    
-    //     } else if ( $('html').hasClass('dark') ) {
-    
-    //         localStorage.setItem('currentScheme', 'light');
-    //         $('html').addClass('light').removeClass('dark');
-    //         $('.indicator').addClass('light').removeClass('dark');
-    
-    //     }
-
-    // });
-
-    
-
-
-//Tout fonctionne suaf au reload
-    // $(".site-header__left__theme-switcher").on('click', function() {
-
-    //     if ( window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ) {
-
-    //         $("html").removeClass("light");
-    //         $("html").toggleClass("dark");
-    //         $(".indicator").removeClass("light");
-    //         $(".indicator").toggleClass("dark");
-
-    //     } else if ( window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
-            
-    //         $("html").removeClass("dark");
-    //         $("html").toggleClass("light");
-    //         $(".indicator").removeClass("dark");
-    //         $(".indicator").toggleClass("light");
-
-    //     }
-    // });
-
+    $('html').css('display', 'block');
+    $('html').css('opacity', '1');
 
 });
