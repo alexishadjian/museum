@@ -27,46 +27,35 @@ Font face
 Variables
 --------------------------------------------------------------*/
 
-$fonts: 'Montserrat', sans-serif;
-$regular: 400;
-$semi-bold: 600;
-$bold: 700;
+html {
+    &.light {
+        color-scheme: light;
+        --text_color: #000000;
+        --link_color: #000000;
+        --background_color: #ffffff;
+        --border_color: #000000;
+        --reverse_background_color: #000000;
+        --reverse_text_color: #ffffff;
+        --icon_color: #000000;
+    }
+    &.dark {
+        color-scheme: dark;
+        --text_color: #ffffff;
+        --link_color: #ffffff;
+        --background_color: #252525;
+        --border_color: #ffffff;
+        --reverse_background_color: #ffffff;
+        --reverse_text_color: #000000;
+        --icon_color: #ffffff;
+    }
 
-$bleu: #197CB0;
-$white: #ffffff;
-$black: #000000;
-$grey: #727272;
-$light_grey: #a5a5a5;
-$mask: #00000040;
-$shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
-
-
-/*--------------------------------------------------------------
-Colors
---------------------------------------------------------------*/
-
-html.light {
-    --text_color: #000000;
-    --link_color: #000000;
-    --background_color: #ffffff;
-    --border_color: #000000;
-    --reverse_background_color: #000000;
-    --reverse_text_color: #ffffff;
-    --icon_color: #000000;
-    --theme_color: light;
-    color-scheme: light;
-}
-
-html.dark {
-    --text_color: #ffffff;
-    --link_color: #ffffff;
-    --background_color: #252525;
-    --border_color: #ffffff;
-    --reverse_background_color: #ffffff;
-    --reverse_text_color: #000000;
-    --icon_color: #ffffff;
-    --theme_color: dark;
-    color-scheme: dark;
+    --fonts: 'Montserrat', sans-serif;
+	--regular: 400;
+	--semibold: 600;
+	--bold: 700;
+	
+	--mask: #00000040;
+	--shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
 }
 
 
@@ -75,10 +64,9 @@ Global
 --------------------------------------------------------------*/
 
 html {
-    font-family: $fonts;
+    font-family: var(--fonts);
     background-color: var(--background_color);
     color: var(--text_color);
-    color-scheme: var(--theme_color);
     scroll-behavior: smooth;
     transition: .2s;
     display: none;
@@ -119,6 +107,11 @@ a {
     color: var(--link_color);
 }
 
+img, video {
+	max-width: 100%;
+	height: auto;
+}
+
 section {
     margin: 80px 0;
     &:first-child {
@@ -126,20 +119,24 @@ section {
     }
 }
 
-.color-white {
-    color: $white;
+.color_white {
+    color: #FFFFFF;
 }
 
-.margin-0 {
+.margin_0 {
     margin: 0;
 }
 
-.textAlign-center {
+.margin-top_0 {
+    margin-top: 0;
+}
+
+.text-align_center {
     text-align: center;
 }
 
-.fontWeight-SB {
-    font-weight: $semi-bold;
+.font-weight_semi-bold {
+    font-weight: var(--semibold);
 }
 
 .gap {
@@ -204,17 +201,17 @@ Modèles
 
 .btn_primary {
     background-color: var(--reverse_background_color);
-    font-weight: $semi-bold;
+    font-weight: var(--semibold);
     color: var(--reverse_text_color);
     &:hover {
-        box-shadow: $shadow;
+        box-shadow: var(--shadow);
         transform: translate(0, -2px);
     }
 }
 
 .btn_secondary {
     background-color: transparent;
-    font-weight: $semi-bold;
+    font-weight: var(--semibold);
     position: relative;
     border: 2px solid var(--reverse_background_color);
     color: var(--text_color);
@@ -234,17 +231,6 @@ Modèles
         &:before {
             width: 100%;
         }
-    }
-}
-
-.btn_tertiary {
-    background-color: var(--background_color);
-    color: var(--text_color);
-    font-weight: $semi-bold;
-    box-shadow: 8px 8px 0 -1px $grey, 8px 8px var(--background_color);
-    transition: .5s;
-    &:hover {
-        box-shadow: 0 0 0;
     }
 }
 
