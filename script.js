@@ -101,4 +101,21 @@ jQuery(document).ready(function($){
     $('html').css('display', 'block');
     $('html').css('opacity', '1');
 
+    /*--------------------------------------------------------------
+    Map
+    --------------------------------------------------------------*/ 
+
+    var map = L.map('leaflet-map').setView([48.860681684225284, 2.337644], 16);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+
+    var marker = L.marker([48.860681684225284, 2.337644]).addTo(map);
+
+    marker.bindPopup("<b>Musée du Louvre</b><br>Rue de Rivoli, 75001 Paris.").openPopup();
+
 });
+
+
