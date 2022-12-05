@@ -724,6 +724,12 @@ Page
 .single-event #ticketing {
   position: relative;
   z-index: 1;
+  min-height: 773px;
+  line-height: 0;
+  background-image: url("../assets/img/bg-video-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .single-event #ticketing:after {
   content: "";
@@ -734,7 +740,7 @@ Page
 .single-event #ticketing video {
   filter: grayscale(1);
   position: relative;
-  inset: 0;
+  width: 100%;
 }
 .single-event #ticketing .video-content {
   position: absolute;
@@ -743,6 +749,7 @@ Page
   left: 0;
   right: 0;
   transform: translate(0, -50%);
+  line-height: normal;
 }
 .single-event #ticketing .video-content .left {
   margin: 100px;

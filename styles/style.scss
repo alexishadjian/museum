@@ -279,6 +279,12 @@ Page
     #ticketing {
         position: relative;
         z-index: 1;
+        min-height: 773px;
+        line-height: 0;
+        background-image: url('../assets/img/bg-video-image.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         &:after {
             content: "";
             position: absolute;
@@ -288,7 +294,7 @@ Page
         video {
             filter: grayscale(1);
             position: relative;
-            inset: 0;
+            width: 100%;
         }
         .video-content {
             position: absolute;
@@ -297,6 +303,7 @@ Page
             left: 0;
             right: 0;
             transform: translate(0, -50%);
+            line-height: normal;
             .left {
                 margin: 100px;
                 h2 {
