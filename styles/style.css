@@ -410,7 +410,6 @@ Modèles
   cursor: pointer;
   transition: 0.2s;
 }
-
 .btn_primary {
   background-color: var(--reverse_background_color);
   font-weight: var(--semibold);
@@ -420,7 +419,6 @@ Modèles
   box-shadow: var(--shadow);
   transform: translate(0, -2px);
 }
-
 .btn_secondary {
   background-color: transparent;
   font-weight: var(--semibold);
